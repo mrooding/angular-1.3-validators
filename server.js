@@ -9,6 +9,5 @@ app.use('/api', router);
 app.listen(3000);
 
 router.get('/validate/:age', function(req, res) {
-  console.log(req.params);
   res.json(req.params.age > 17);
 });
