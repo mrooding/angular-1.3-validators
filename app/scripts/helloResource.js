@@ -3,6 +3,10 @@
 angular.module('angularValidators')
   .factory('HelloResource', function ($resource) {
     return $resource(
-      '/api', {}, {}
+      '/api/hello/:name',
+      {
+        name: '@name'
+      },
+      {}
     );
   });
