@@ -44,7 +44,7 @@ The following response should be displayed:
 **{msg: "hello marc"}**
 
 ### Front-end
-Starting the front-end is as simple cd-ing to the root of the project and running the following command:
+Starting the front-end is as simple as cd-ing to the root of the project and running the following command:
 
 **grunt serve**
 
