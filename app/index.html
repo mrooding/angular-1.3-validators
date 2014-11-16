@@ -11,6 +11,28 @@
         <input type="text" name="name"
                ng-model="name.value" required validator-with-callback="name" />
         <div ng-if="form.name.$valid">{{name.detail}}</div>
+
+        <h1>Validation over multiple inputs</h1>
+        <input type="password" name="password" ng-model="password" required ng-minlength="8" validate-must-equal-to="password2" form-name="form" />
+        <div ng-messages="form.password.$error" ng-if="form.password.$touched && form.password.$invalid && !form.password.$error.notEqualTo">
+            <div ng-message="required">This field is required</div>
+            <div ng-message="minlength">Your password must be at least 8 characters long</div>
+        </div>
+        <br />
+        <input type="password" name="password2" ng-model="password2" required ng-minlength="8" validate-must-equal-to="password" form-name="form" />
+        <div ng-messages="form.password2.$error" ng-if="form.password2.$touched && form.password2.$invalid">
+            <div ng-message="required">This field is required</div>
+            <div ng-message="minlength">Your password must be at least 8 characters long</div>
+        </div>
+        <div ng-if="form.password.$touched && form.password2.$touched &&
+        (!form.password.$error.required && !form.password.$error.minlength) &&
+        (!form.password2.$error.required && !form.password2.$error.minlength) &&
+        (form.password.$error.notEqualTo || form.password2.$error.notEqualTo)">
+            Your passwords do not match
+        </div>
+
+        <p>The submit button will only be enabled when the entire form is valid</p>
+        <button ng-disabled="form.$invalid">Submit</button>
     </form>
 </div>
 
