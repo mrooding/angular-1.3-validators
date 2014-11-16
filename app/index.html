@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="angularValidators">
+<div ng-controller="ValidationController">
+    <form name="form">
+        <h1>Async Validator with callback</h1>
+        <input type="text" name="field"
+               ng-model="name.value" required validator-with-callback="name" />
+        {{name.detail}}
+    </form>
+</div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/lodash/dist/lodash.compat.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/helloResource.js"></script>
+<script src="scripts/validationController.js"></script>
+<script src="scripts/validatorWithCallback.js"></script>
+<script src="scripts/validateMustEqualTo.js"></script>
+</body>
+</html>
