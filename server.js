@@ -8,6 +8,8 @@ app.use('/api', bodyParser.json());
 app.use('/api', router);
 app.listen(3000);
 
-router.get('/validate/:age', function(req, res) {
-  res.json(req.params.age > 17);
+router.get('/hello/:name', function(req, res) {
+  res.json({
+    msg: 'hello ' + req.params.name
+  });
 });
