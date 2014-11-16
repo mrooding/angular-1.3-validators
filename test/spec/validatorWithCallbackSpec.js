@@ -56,7 +56,7 @@ describe('Directive: Validate With Callback', function () {
     $scope.$digest();
 
     expect($scope.name.detail).toBe('');
-    expect(form.name.$valid).toBe(false);
+    expect(form.name.$invalid).toBeTruthy();
   });
 
   it('should set the detail property when resolved', function () {
@@ -68,7 +68,7 @@ describe('Directive: Validate With Callback', function () {
     $scope.$digest();
 
     expect($scope.name.detail).toBe('Hello Marc');
-    expect(form.name.$valid).toBe(true);
+    expect(form.name.$valid).toBeTruthy();
   });
 
   it('should set the detail property when resolved', function () {
@@ -78,6 +78,6 @@ describe('Directive: Validate With Callback', function () {
     $scope.$digest();
 
     expect($scope.name.detail).toBe('');
-    expect(form.name.$valid).toBe(false);
+    expect(form.name.$invalid).toBeTruthy();
   });
 });
