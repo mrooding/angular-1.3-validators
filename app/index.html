@@ -8,9 +8,9 @@
 <div ng-controller="ValidationController">
     <form name="form">
         <h1>Async Validator with callback</h1>
-        <input type="text" name="field"
+        <input type="text" name="name"
                ng-model="name.value" required validator-with-callback="name" />
-        {{name.detail}}
+        <div ng-if="form.name.$valid">{{name.detail}}</div>
     </form>
 </div>
 
