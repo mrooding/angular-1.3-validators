@@ -1,0 +1,26 @@
+{
+  "name": "angular-1.3-validators",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mrooding/angular-1.3-validators",
+  "authors": [
+    "Marc Rooding"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.0",
+    "angular-resource": "~1.3.0",
+    "angular-messages": "~1.3.0"
+  },
+  "devDependencies": {
+    "lodash": "~2.4.1",
+    "angular-mocks": "~1.3.2"
+  }
+}
