@@ -37,10 +37,6 @@ module.exports = function (grunt) {
           livereload: true
         }
       },
-      jsx: {
-        files: ['<%= demo.app %>/scripts/{,*/}*.jsx'],
-        tasks: ['react']
-      },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
@@ -184,7 +180,8 @@ module.exports = function (grunt) {
     bowerInstall: {
       app: {
         src: ['<%= demo.app %>/index.html'],
-        ignorePath: '<%= demo.app %>/'
+        ignorePath: '<%= demo.app %>/',
+        devDependencies: true
       }
     },
 
