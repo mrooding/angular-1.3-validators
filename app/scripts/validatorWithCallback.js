@@ -7,29 +7,21 @@ angular.module('angularValidators')
       link: function (scope, element, attrs, ngModel) {
         var target = scope.$eval(attrs.validatorWithCallback);
 
-        function clear() {
-          if (_.isUndefined(target)) {
-            return;
-          }
-
-          target.detail = '';
-        }
-
         function callback(response) {
           if (_.isUndefined(target)) {
             return;
           }
 
-          target.detail = response.msg;
+          target.detail = response;
         }
 
         ngModel.$asyncValidators.validateWithCallback = function (modelValue, viewValue) {
-          clear();
+          callback('');
 
           var value = modelValue || viewValue;
 
           return HelloResource.get({name: value}).$promise.then(function (response) {
-            callback(response);
+            callback(response.msg);
           });
         };
       }
