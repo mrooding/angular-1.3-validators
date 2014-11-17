@@ -23,12 +23,7 @@
         <div ng-messages="form.password2.$error" ng-if="form.password2.$touched && form.password2.$invalid">
             <div ng-message="required">This field is required</div>
             <div ng-message="minlength">Your password must be at least 8 characters long</div>
-        </div>
-        <div ng-if="form.password.$touched && form.password2.$touched &&
-        (!form.password.$error.required && !form.password.$error.minlength) &&
-        (!form.password2.$error.required && !form.password2.$error.minlength) &&
-        (form.password.$error.notEqualTo || form.password2.$error.notEqualTo)">
-            Your passwords do not match
+            <div ng-message="notEqualTo">Your passwords do not match</div>
         </div>
 
         <p>The submit button will only be enabled when the entire form is valid</p>
