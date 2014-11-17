@@ -25,7 +25,7 @@ describe('Directive: Validate With Callback', function () {
 
       element = angular.element(
         '<form name="form">' +
-        '<input ng-model="name.value" name="name" validator-with-callback="name" />' +
+        '<input ng-model="name.value" name="name" validate-with-callback="name" />' +
         '</form>'
       );
 
