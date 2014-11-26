@@ -1,7 +1,7 @@
 # angular-1.3-validators
 
 ## What is is?
-A sample project that has a working implementation for the validators shown in <a href="http://blog.xebia.com" target="_blank">this blog post</a>.
+A sample project that has a working implementation for the validators shown in <a href="http://blog.xebia.com/2014/11/26/how-to-implement-validation-callbacks-in-angularjs-1-3/" target="_blank">this blog post</a>.
 
 The project consists of a simple NodeJS server used by the async validator and an AngularJS front-end that demonstrates the different validators described in the blog post.
 
